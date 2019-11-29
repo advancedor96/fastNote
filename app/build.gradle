@@ -9,6 +9,7 @@ android {
         targetSdkVersion 29
         versionCode 4
         versionName 'addPadding'
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

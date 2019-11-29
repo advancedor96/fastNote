@@ -56,6 +56,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        String content = editText.getText().toString();
+        pref.edit().putString("content", content).commit();
+
+        Toast.makeText(this, "已儲存", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
         content = pref.getString("content", "");
