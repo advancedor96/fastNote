@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/selectAll"
+        android:title="全選"
+        app:showAsAction="always"/>
+    <item android:id="@+id/clearall"
+        android:title="清除"
+        app:showAsAction="always"/>
+    <item android:id="@+id/save"
+        android:title="儲存"
+        app:showAsAction="always"/>
+
+
+    <!--    <item android:id="@+id/action_help"-->
+    <!--        android:icon="@drawable/filter_18dp"-->
+    <!--        android:title="過濾"-->
+    <!--        app:showAsAction="ifRoom"/>-->
+</menu>
