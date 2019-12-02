@@ -4,12 +4,15 @@
     <item android:id="@+id/selectAll"
         android:title="全選"
         app:showAsAction="always"/>
+    <item android:id="@+id/copy"
+        android:title="複製"
+        app:showAsAction="always"/>
     <item android:id="@+id/clearall"
         android:title="清除"
         app:showAsAction="always"/>
     <item android:id="@+id/save"
         android:title="儲存"
-        app:showAsAction="always"/>
+        app:showAsAction="ifRoom"/>
 
 
     <!--    <item android:id="@+id/action_help"-->

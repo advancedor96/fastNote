@@ -5,6 +5,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -85,6 +87,21 @@ public class MainActivity extends AppCompatActivity {
         if(item.getItemId() == R.id.selectAll){
             editText.selectAll();
             return true;
+        }else if(item.getItemId() == R.id.copy){
+
+            int start = editText.getSelectionStart();
+            int end = editText.getSelectionEnd();
+            String selectedContent = editText.getText().toString().substring(start, end);
+            if(selectedContent.length() == 0){
+                Toast.makeText(this, "沒有選取文字，複製失效", Toast.LENGTH_SHORT).show();
+            }else{
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("text label", selectedContent);
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(this, "複製到剪貼簿", Toast.LENGTH_SHORT).show();
+            }
+            return true;
+
         }else if(item.getItemId() == R.id.clearall){
 
             AlertDialog.Builder myAlertBuilder = new AlertDialog.Builder(MainActivity.this);
